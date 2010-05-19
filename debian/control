@@ -1,0 +1,11 @@
+Source: grub2-theme-tuquito
+Section: misc
+Priority: extra
+Maintainer: Mario Colque <mario@tuquito.org.ar>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.1
+
+Package: grub2-theme-tuquito
+Architecture: all
+Description: Grub2 theme para Tuquito 4.x
+ Grub2 theme para Tuquito 4.x
