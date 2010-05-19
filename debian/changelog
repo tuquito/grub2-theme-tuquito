@@ -1,3 +1,9 @@
+grub2-theme-tuquito (0.1-2) unstable; urgency=low
+
+  * arreglos en la imagen
+
+ -- Mario Colque <mario@tuquito.org.ar>  Wed, 19 May 2010 16:16:11 -0300
+
 grub2-theme-tuquito (0.1-1) unstable; urgency=low
 
   * Version inicial
