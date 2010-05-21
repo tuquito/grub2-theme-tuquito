@@ -1,3 +1,9 @@
+grub2-theme-tuquito (0.1-5) lucid; urgency=low
+
+  * agregé postinst
+
+ -- Mario Colque <mario@tuquito.org.ar>  Fri, 21 May 2010 11:52:00 -0300
+
 grub2-theme-tuquito (0.1-4) lucid; urgency=low
 
   * Modificación en resolución de la imagen

@@ -1,0 +1,23 @@
+#!/bin/sh
+# postinst script for grub2-theme-tuquito
+#
+# see: dh_installdeb(1)
+
+set -e
+
+case "$1" in
+    configure)
+		update-grub2
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+
+    ;;
+
+    *)
+        echo "argumentos \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0
