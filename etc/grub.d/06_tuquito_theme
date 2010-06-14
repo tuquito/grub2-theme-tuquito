@@ -2,18 +2,28 @@
 
 source /usr/lib/grub/grub-mkconfig_lib
 
+# this allows desktop-base to override our settings
+f=/usr/share/desktop-base/grub_background.sh
+if test -e ${f} ; then
+  source ${f}
+else
+  WALLPAPER="/usr/share/images/desktop-base/tuquito.png"
+  COLOR_NORMAL="white/black"
+  COLOR_HIGHLIGHT="white/light-gray"
+fi
+
 set_mono_theme()
 {
   cat << EOF
 set menu_color_normal=white/black
-set menu_color_highlight=white/light-gray
+set menu_color_highlight=black/light-gray
 EOF
 }
 
 # check for usable backgrounds
 use_bg=false
 if [ "$GRUB_TERMINAL_OUTPUT" = "gfxterm" ] ; then
-  for i in {/boot/grub,/usr/share/images/desktop-base}/tuquito.{png,tga} ; do
+  for i in /boot/grub/`basename ${WALLPAPER}` ${WALLPAPER} ; do
     if is_path_readable_by_grub $i ; then 
       bg=$i
       case ${bg} in
@@ -22,7 +32,7 @@ if [ "$GRUB_TERMINAL_OUTPUT" = "gfxterm" ] ; then
         *.jpg|*.jpeg)	reader=jpeg ;;
       esac
       if test -e /boot/grub/${reader}.mod ; then
-        echo "Found Tuquito background: `basename ${bg}`" >&2
+        echo "Found Tuquito background image: `basename ${bg}`" >&2
         use_bg=true
         break
       fi
@@ -36,8 +46,8 @@ if ${use_bg} ; then
   cat << EOF
 insmod ${reader}
 if background_image `make_system_path_relative_to_its_root ${bg}` ; then
-  set color_normal=white/black
-  set color_highlight=white/light-gray
+  set color_normal=${COLOR_NORMAL}
+  set color_highlight=${COLOR_HIGHLIGHT}
 else
 EOF
 fi

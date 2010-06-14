@@ -9,11 +9,8 @@ case "$1" in
     configure)
 		update-grub2
     ;;
-
     abort-upgrade|abort-remove|abort-deconfigure)
-
     ;;
-
     *)
         echo "argumentos \`$1'" >&2
         exit 1

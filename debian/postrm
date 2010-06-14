@@ -1,0 +1,8 @@
+#!/bin/sh
+# postinst script for grub2-theme-tuquito
+#
+# see: dh_installdeb(1)
+
+set -e
+update-grub2
+exit 0

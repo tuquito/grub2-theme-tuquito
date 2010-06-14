@@ -1,3 +1,15 @@
+grub2-theme-tuquito (0.1-7) lucid; urgency=low
+
+  * corrección minima
+
+ -- Mario Colque <mario@tuquito.org.ar>  Mon, 14 Jun 2010 18:09:14 -0300
+
+grub2-theme-tuquito (0.1-6) lucid; urgency=low
+
+  * Revisión de archivo 06_tuquito_theme 
+
+ -- Mario Colque <mario@tuquito.org.ar>  Mon, 14 Jun 2010 18:06:29 -0300
+
 grub2-theme-tuquito (0.1-5) lucid; urgency=low
 
   * agregé postinst
