@@ -1,3 +1,10 @@
+grub2-theme-tuquito (0.2) maverick; urgency=low
+
+  * new version
+  * new image
+
+ -- Mario Colque <mario@tuquito.org.ar>  Mon, 13 Sep 2010 00:55:12 -0300
+
 grub2-theme-tuquito (0.1-8) lucid; urgency=low
 
   * modificación en color de selección

@@ -1,11 +1,11 @@
-#!/bin/bash -e
+#!/bin/sh -e
 
-source /usr/lib/grub/grub-mkconfig_lib
+. /usr/lib/grub/grub-mkconfig_lib
 
 # this allows desktop-base to override our settings
 f=/usr/share/desktop-base/grub_background.sh
 if test -e ${f} ; then
-  source ${f}
+  . ${f}
 else
   WALLPAPER="/usr/share/images/desktop-base/tuquito.png"
   COLOR_NORMAL="white/black"
@@ -22,23 +22,25 @@ EOF
 
 # check for usable backgrounds
 use_bg=false
-if [ "$GRUB_TERMINAL_OUTPUT" = "gfxterm" ] ; then
-  for i in /boot/grub/`basename ${WALLPAPER}` ${WALLPAPER} ; do
-    if is_path_readable_by_grub $i ; then 
-      bg=$i
-      case ${bg} in
-        *.png)		reader=png ;;
-        *.tga)		reader=tga ;;
-        *.jpg|*.jpeg)	reader=jpeg ;;
-      esac
-      if test -e /boot/grub/${reader}.mod ; then
-        echo "Found Tuquito background image: `basename ${bg}`" >&2
-        use_bg=true
-        break
+for output in ${GRUB_TERMINAL_TERMINAL}; do
+  if [ "$output" = "gfxterm" ] ; then
+    for i in /boot/grub/`basename ${WALLPAPER}` ${WALLPAPER} ; do
+      if is_path_readable_by_grub $i ; then 
+        bg=$i
+        case ${bg} in
+          *.png)		reader=png ;;
+          *.tga)		reader=tga ;;
+          *.jpg|*.jpeg)	reader=jpeg ;;
+        esac
+        if test -e /boot/grub/${reader}.mod ; then
+          echo "Found Tuquito background image: `basename ${bg}`" >&2
+          use_bg=true
+          break
+        fi
       fi
-    fi
-  done
-fi
+    done
+  fi
+done
 
 # set the background if possible
 if ${use_bg} ; then
@@ -52,7 +54,7 @@ else
 EOF
 fi
 
-# otherwise, set a monochromatic theme for Ubuntu
+# otherwise, set a monochromatic theme for Tuquito
 if ${use_bg} ; then
   set_mono_theme | sed -e "s/^/  /g"
   echo "fi"
