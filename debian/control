@@ -7,6 +7,6 @@ Standards-Version: 3.8.1
 
 Package: grub2-theme-tuquito
 Architecture: all
-Description: Grub2 theme para Tuquito 4.x
- Grub2 theme para Tuquito 4.x
+Description: Grub2 theme for Tuquito 4.x
+ Grub2 theme for Tuquito 4.x
  * Tuquito Team! - 2010
