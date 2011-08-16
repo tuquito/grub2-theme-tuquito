@@ -1,3 +1,16 @@
+grub2-theme-tuquito (0.5) natty; urgency=low
+
+  * new background image
+
+ -- Mario Colque <mario@tuquito.org.ar>  Mon, 15 Aug 2011 23:49:26 -0300
+
+grub2-theme-tuquito (0.4) natty; urgency=low
+
+  * Pampa branch
+  * new image
+
+ -- Mario Colque <mario@tuquito.org.ar>  Mon, 08 Aug 2011 19:11:53 -0300
+
 grub2-theme-tuquito (0.3) maverick; urgency=low
 
   * new config file
