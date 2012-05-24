@@ -1,3 +1,10 @@
+grub2-theme-tuquito (0.7) precise; urgency=low
+
+  * Guaraní branch
+  * Background removed
+
+ -- Mario Colque <mario@tuquito.org.ar>  Wed, 23 May 2012 21:56:59 -0300
+
 grub2-theme-tuquito (0.6) natty; urgency=low
 
   * RGB mode

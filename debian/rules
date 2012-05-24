@@ -23,27 +23,25 @@ configure-stamp:
 
 build: build-stamp
 
-build-stamp: configure-stamp  
+build-stamp: configure-stamp
 	dh_testdir
 	touch build-stamp
 
-clean: 
+clean:
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp configure-stamp
-	dh_clean 
+	dh_clean
 
 install: build
 	dh_testdir
 	dh_testroot
-	dh_prep  
+	dh_prep
 	dh_installdirs
 
 	# Add here commands to install the package into debian/grub2-theme-tuquito.
 	#$(MAKE) DESTDIR=$(CURDIR)/debian/grub2-theme-tuquito install
 	cp -af etc $(CURDIR)/debian/grub2-theme-tuquito/
-	cp -af usr $(CURDIR)/debian/grub2-theme-tuquito/
-
 
 # Build architecture-independent files here.
 binary-indep: install
@@ -53,7 +51,7 @@ binary-indep: install
 binary-arch: install
 	dh_testdir
 	dh_testroot
-	dh_installchangelogs 
+	dh_installchangelogs
 	dh_installdocs
 	dh_installexamples
 #	dh_install
